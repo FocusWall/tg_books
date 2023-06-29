@@ -3,7 +3,7 @@ import psycopg2
 from misc import user, password, db, host
 
 class Database:
-    def __init__(self, user, password, db, host):
+    def __init__(self, user=user, password=password, db=db, host=host):
         self.user = user
         self.password = password
         self.db = db
@@ -28,7 +28,7 @@ class Database:
 db = Database(user, password, db, host)
 
 db_conn = db.connect()
-query = "SELECT id, name FROM users"
+query = "SELECT * FROM users"
 if db_conn:
     try:
         result = db.query_db(query, db_conn)
