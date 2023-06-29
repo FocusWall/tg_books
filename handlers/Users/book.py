@@ -4,6 +4,7 @@ from aiogram.dispatcher.filters.builtin import Command
 
 from loader import dp, bot
 from states.upload import Upload
+import uuid
 
 @dp.message_handler(Command("upload"))
 async def start_upload_file(message: types.Message):
@@ -15,6 +16,7 @@ async def upload_file(message: types.Message, state: FSMContext):
     if message.document:
         file_id = message.document.file_id
         file_name = message.document.file_name
+        book_id = uuid.uuid4().fields[-1]
 
         await message.answer("Worked")
         try:
