@@ -1,5 +1,4 @@
 import psycopg2
-
 from db.misc import user, password, db, host
 
 class Database:
@@ -25,17 +24,4 @@ class Database:
                 return result
             
 
-#db = Database(user, password, db, host)
 
-#db_conn = db.connect()
-#query = "INSERT INTO users (id, name) VALUES (9, 'stacy') RETURNING id"
-#if db_conn:
-#    try:
-#        result = db.query_db(query, db_conn)
-#        print(result)
-#    except:
-#        print("Incorrect query")
-        
-    
-#else:
-#    print("Error has ocurred while connecting to database")
